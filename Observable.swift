@@ -39,11 +39,11 @@ class ViewModel {
 
 class View {
     
-    var vm: ViewModel
+    weak var vm: ViewModel?
     init(vm: ViewModel) { self.vm = vm }
     
     func observe() {
-        vm.observableString.observe(on: self) { string in 
+        vm?.observableString.observe(on: self) { string in 
             print(string)
         }
     }
